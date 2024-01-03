@@ -2,6 +2,7 @@
 import { ref, type Ref } from 'vue';
 import MyCompoenent from './MyComponent.vue'
 import TodoListComponent from './TodoListComponent.vue';
+import InputComponent from './InputComponent.vue';
 
 let id = 0;
 
@@ -18,6 +19,15 @@ const todos :Ref<todo[]>= ref([
     { id: id++, text: 'Vue 배우기' ,done:false}
 ]);
 
+const addTodo = (msg:any) => {
+    let newTodo = msg._rawValue;
+    todos.value.push({
+        id:id++,
+        text:newTodo,
+        done:false
+    })
+}
+
 
 </script>
 
@@ -27,9 +37,9 @@ const todos :Ref<todo[]>= ref([
         <template #intro>의 할일이다 임마</template>
     </MyCompoenent>
 
-    <!-- <InputComponent>
+    <InputComponent @response="(msg) => addTodo(msg)">
     
-    </InputComponent>-->
+    </InputComponent>
 
     <TodoListComponent :todolist="todos"/>
     
