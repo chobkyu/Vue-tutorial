@@ -43,6 +43,4 @@ const addTodo = (msg:any) => {
 
     <TodoListComponent :todolist="todos"/>
     
-
-
 </template>

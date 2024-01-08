@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import type { todo } from './TodoPage.vue';
+
 
 const props = defineProps({
     todolist : Array<todo>
-});
-
-const hideCompleted = ref(false)
-
+})
 </script>
 
 <template>
@@ -17,10 +14,6 @@ const hideCompleted = ref(false)
             <span :class="{done: todo.done}">{{ todo.text }}</span>
         </li>
     </ul>
-
-    <button @click="hideCompleted = !hideCompleted">
-    {{ hideCompleted ? 'Show all' : 'Hide completed' }}
-  </button>
 </template>
 
 <style>

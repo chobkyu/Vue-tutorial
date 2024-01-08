@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import type IndexViewVue from '../components/IndexView.vue';
-
+import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-  <div>
-    <IndexViewVue />
-  </div>
+  <main>
+    <TheWelcome />
+  </main>
 </template>
